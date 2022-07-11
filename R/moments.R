@@ -20,7 +20,7 @@
 
 moment_ph <- function(obj, m) {
   e <- matrix(rep(1,nrow(obj$subint_mat)), nrow(obj$subint_mat), 1)
-  inv <- solve(obj$subint_mat %^% m)
+  inv <- matrixdist:inverse_matrix(obj$subint_mat %^% m)
   moment <- as.numeric((-1) ** m * factorial(m) * obj$init_probs %*% inv %*% e)
   return(moment)
 }
@@ -73,7 +73,7 @@ moment_mph <- function(obj, v) {
   moment_row <- function(row, obj) {
 
     moment_individual <- function(element, obj){
-      solve(-obj$subint_mat) %*% diag(obj$reward_mat[,element])
+      matrixdist:inverse_matrix(-obj$subint_mat) %*% diag(obj$reward_mat[,element])
     }
 
     total <- diag(1, nrow(obj$subint_mat), ncol(obj$subint_mat))
