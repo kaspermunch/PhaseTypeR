@@ -23,6 +23,8 @@
 #'  \code{mult_cont_phase_type} or \code{mult_disc_phase_type} object
 #' @param ... other arguments passed to methods
 #'
+#' @import matrixdist
+#'
 #' @return This function returns a single value for the mean of univariate phase-type
 #' distributions, or a vector of means for each reward-transformed distribution
 #' of the multivariate phase-type distributions.
