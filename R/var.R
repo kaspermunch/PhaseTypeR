@@ -77,7 +77,7 @@ var.cont_phase_type <- function(obj, ...) {
 
 var.disc_phase_type <- function(obj, ...) {
   variance <- sum(2 * obj$init_probs %*% obj$subint_mat %*%
-                    solve((diag(nrow = nrow(obj$subint_mat))
+                    matrixdist:::matrix_inverse((diag(nrow = nrow(obj$subint_mat))
                            -obj$subint_mat) %^% 2)) + mean(obj) - mean(obj)^2
   variance <- as.numeric(variance)
   return(variance)
