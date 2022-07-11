@@ -14,6 +14,7 @@
 #'
 #' @usage moment_ph(obj, m)
 #'
+#' @import matrixdist
 #'
 #' @keywords internal
 
