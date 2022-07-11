@@ -27,6 +27,7 @@ URL: https://rivasiker.github.io/PhaseTypeR/,
 BugReports: https://github.com/rivasiker/PhaseTypeR/issues
 Depends: 
     expm,
+    matrixdist,
     igraph,
     methods
 Suggests: 
