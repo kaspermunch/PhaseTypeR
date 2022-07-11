@@ -20,7 +20,7 @@
 
 moment_ph <- function(obj, m) {
   e <- matrix(rep(1,nrow(obj$subint_mat)), nrow(obj$subint_mat), 1)
-  inv <- matrixdist::matrix_inverse(obj$subint_mat %^% m)
+  inv <- matrix_inverse(obj$subint_mat %^% m)
   moment <- as.numeric((-1) ** m * factorial(m) * obj$init_probs %*% inv %*% e)
   return(moment)
 }
