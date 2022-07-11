@@ -74,7 +74,7 @@ moment_mph <- function(obj, v) {
   moment_row <- function(row, obj) {
 
     moment_individual <- function(element, obj){
-      matrixdist::inverse_matrix(-obj$subint_mat) %*% diag(obj$reward_mat[,element])
+      matrixdist:::inverse_matrix(-obj$subint_mat) %*% diag(obj$reward_mat[,element])
     }
 
     total <- diag(1, nrow(obj$subint_mat), ncol(obj$subint_mat))
