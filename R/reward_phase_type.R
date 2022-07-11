@@ -193,12 +193,12 @@ reward_phase_type <- function(phase_type, reward){
     }
 
     if (length(z) > 0) {
-      subint_mat <- T_tilde$pp + (T_tilde$pz %*% solve(diag(1, ncol(T_tilde$zz))
+      subint_mat <- T_tilde$pp + (T_tilde$pz %*% matrixdist:::matrix_inverse(diag(1, ncol(T_tilde$zz))
                                                        - T_tilde$zz) %*% T_tilde$zp)
 
       init_probs_z <- init_probs[z]
       init_probs <- init_probs_p +
-        (init_probs_z %*% solve(diag(1,ncol(T_tilde$zz)) - T_tilde$zz)  %*%
+        (init_probs_z %*% matrixdist:::matrix_inverse(diag(1,ncol(T_tilde$zz)) - T_tilde$zz)  %*%
            T_tilde$zp)
 
     } else {
