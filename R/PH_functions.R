@@ -60,7 +60,7 @@ dPH <- function(x, obj){
     vec <- c()
     e <- matrix(rep(1,nrow(obj$subint_mat)), nrow(obj$subint_mat), 1)
     for (i in x) {
-      vec <- c(vec, -obj$init_probs %*% expm(i * obj$subint_mat)
+      vec <- c(vec, -obj$init_probs %*% expm(i * obj$subint_mat, method="PadeRBS")
                %*% obj$subint_mat %*% e)
     }
     return(vec)
