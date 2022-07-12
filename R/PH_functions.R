@@ -111,7 +111,7 @@ pPH <- function(q, obj){
     vec <- c()
     e <- matrix(rep(1,nrow(obj$subint_mat)), nrow(obj$subint_mat), 1)
     for (i in q) {
-      vec <- c(vec, 1 - obj$init_probs %*% expm(obj$subint_mat * i) %*% e)
+      vec <- c(vec, 1 - obj$init_probs %*% expm(obj$subint_mat * i, method="PadeRBS") %*% e)
     }
     return(vec)
   } else {
